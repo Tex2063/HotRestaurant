@@ -47,13 +47,14 @@ app.get("/reserve", function (req, res) {
 //================================================================
 
 // Create new reservations - takes in JSON input
-app.post("/reserve", function(req, res) { //need actual route!!
+app.post("/reserve", function (req, res) { //need actual route!!
+
     // req.body hosts is equal to the JSON post sent from the user
     var newReservation = req.body;
 
     console.log(newReservation);
 
-    // IF-ELSE statement for pushing user input to either tables or waitlist array
+    //  IF-ELSE statement for pushing user input to either tables or waitlist array
     if(tables.length <= 5) {
 
         // We then add the json the user sent to the waitlist array
@@ -81,4 +82,5 @@ app.post("/reserve", function(req, res) { //need actual route!!
 app.listen(PORT, function () {
 
     console.log("App listening on PORT " + PORT);
+
 });
